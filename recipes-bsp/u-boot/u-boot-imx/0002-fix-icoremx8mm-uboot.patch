@@ -1,7 +1,7 @@
-From 4a394b4125e09571f39cbe2c3006f08bdd9a8625 Mon Sep 17 00:00:00 2001
+From 75426f21915f1d5c0cf723e26e8dce5534d00ed9 Mon Sep 17 00:00:00 2001
 From: Matteo Lisi <matteo.lisi@engicam.com>
-Date: Wed, 13 Feb 2019 10:11:52 +0100
-Subject: [PATCH] fix icoremx8mm uboot
+Date: Fri, 7 Jun 2019 14:30:54 +0200
+Subject: [PATCH 2/8] fix-icoremx8mm-uboot
 
 ---
  arch/arm/dts/icore-imx8mm.dts                 |  13 +--
@@ -148,7 +148,7 @@ index d8b59d3..e8a2a3b 100644
  
  #define INTPLL_LOCK_MASK			BIT(31)
 diff --git a/arch/arm/mach-imx/imx8m/clock_imx8mm.c b/arch/arm/mach-imx/imx8m/clock_imx8mm.c
-index 5228e6d..8c59925 100644
+index 3635c0f..785d3dd 100644
 --- a/arch/arm/mach-imx/imx8m/clock_imx8mm.c
 +++ b/arch/arm/mach-imx/imx8m/clock_imx8mm.c
 @@ -720,6 +720,11 @@ int clock_init()

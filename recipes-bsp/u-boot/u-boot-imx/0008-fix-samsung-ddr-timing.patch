@@ -1,14 +1,14 @@
-From 58aecea44860d6e7bfccec8764d82814ea827521 Mon Sep 17 00:00:00 2001
+From 6a38b54dfbbeac6fb4ba245c5ea98144d06a4fb3 Mon Sep 17 00:00:00 2001
 From: Matteo Lisi <matteo.lisi@engicam.com>
-Date: Mon, 3 Jun 2019 16:38:29 +0200
-Subject: [PATCH] fix samsung ddr timing
+Date: Fri, 7 Jun 2019 14:33:47 +0200
+Subject: [PATCH 8/8] fix-samsung-ddr-timing
 
 ---
  board/engicam/icore_mx8mm/lpddr4_timing.c | 82 +++++++++++------------
  1 file changed, 41 insertions(+), 41 deletions(-)
 
 diff --git a/board/engicam/icore_mx8mm/lpddr4_timing.c b/board/engicam/icore_mx8mm/lpddr4_timing.c
-index 135c021470..c3d090081e 100755
+index 135c021..c3d0900 100755
 --- a/board/engicam/icore_mx8mm/lpddr4_timing.c
 +++ b/board/engicam/icore_mx8mm/lpddr4_timing.c
 @@ -14,7 +14,7 @@ struct dram_cfg_param ddr_ddrc_cfg[] = {
@@ -124,7 +124,7 @@ index 135c021470..c3d090081e 100755
 +	{0x5403d,0x1400},
  	{0xd0000, 0x1},
  };
- 
+
 @@ -1136,31 +1136,31 @@ struct dram_cfg_param ddr_fsp2_cfg[] = {
  	{0x54009,0xc8},
  	{0x5400b,0x2},
@@ -170,7 +170,7 @@ index 135c021470..c3d090081e 100755
 +	{0x5403d,0x1400},
  	{0xd0000, 0x1},
  };
- 
+
 @@ -1177,7 +1177,7 @@ struct dram_cfg_param ddr_fsp0_2d_cfg[] = {
  	{0x5400b,0x2},
  	{0x5400f,0x100},
@@ -189,6 +189,5 @@ index 135c021470..c3d090081e 100755
  	{0x54032,0xd400},
  	{0x54033,0x212d},
  	{0x54034,0x4400},
--- 
+--
 2.17.1
-

@@ -1,7 +1,7 @@
-From f0bc78f57180bdbc62f5197de638cbfebb8c3631 Mon Sep 17 00:00:00 2001
+From f92a31446cf2964e8b0e974c89b53dd44a0f25ee Mon Sep 17 00:00:00 2001
 From: Matteo Lisi <matteo.lisi@engicam.com>
-Date: Mon, 15 Apr 2019 17:45:18 +0200
-Subject: [PATCH] switch to 1g ram support
+Date: Fri, 7 Jun 2019 14:31:17 +0200
+Subject: [PATCH 3/8] switch-to-1g-ram-support
 
 ---
  board/engicam/icore_mx8mm/lpddr4_timing.c | 3830 ++++++++++-----------
@@ -13,7 +13,7 @@ Subject: [PATCH] switch to 1g ram support
 diff --git a/board/engicam/icore_mx8mm/lpddr4_timing.c b/board/engicam/icore_mx8mm/lpddr4_timing.c
 old mode 100644
 new mode 100755
-index 61b6b9e2eb..c3d090081e
+index 61b6b9e..c3d0900
 --- a/board/engicam/icore_mx8mm/lpddr4_timing.c
 +++ b/board/engicam/icore_mx8mm/lpddr4_timing.c
 @@ -1,1981 +1,1849 @@
@@ -3848,7 +3848,7 @@ index 61b6b9e2eb..c3d090081e
 +};
 +
 diff --git a/configs/icore_mx8mm_defconfig b/configs/icore_mx8mm_defconfig
-index 5e1db867bf..a5e72ded14 100644
+index 5e1db86..a5e72de 100644
 --- a/configs/icore_mx8mm_defconfig
 +++ b/configs/icore_mx8mm_defconfig
 @@ -2,6 +2,7 @@ CONFIG_ARM=y
@@ -3860,7 +3860,7 @@ index 5e1db867bf..a5e72ded14 100644
  CONFIG_SYS_EXTRA_OPTIONS="IMX_CONFIG=arch/arm/mach-imx/spl_sd.cfg,SPL_TEXT_BASE=0x7E1000"
  CONFIG_FIT=y
 diff --git a/include/configs/icore_mx8mm.h b/include/configs/icore_mx8mm.h
-index 955880ba6d..8d9d74b948 100644
+index 955880b..8d9d74b 100644
 --- a/include/configs/icore_mx8mm.h
 +++ b/include/configs/icore_mx8mm.h
 @@ -254,8 +254,16 @@

@@ -1,7 +1,7 @@
-From 11d5ed83cc4a1942e8feba5e9fd75a68229315e6 Mon Sep 17 00:00:00 2001
+From fc47800d14ff58b5af3262f86a947b839289f934 Mon Sep 17 00:00:00 2001
 From: Matteo Lisi <matteo.lisi@engicam.com>
-Date: Mon, 6 May 2019 14:53:54 +0200
-Subject: [PATCH] fix u-boot args for icoremx8m
+Date: Fri, 7 Jun 2019 14:33:25 +0200
+Subject: [PATCH 7/8] fix-u-boot-args-for-icoremx8m
 
 ---
  include/configs/icoremx8m.h | 4 ++--

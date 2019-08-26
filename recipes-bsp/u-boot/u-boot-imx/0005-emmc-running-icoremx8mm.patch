@@ -1,3 +1,13 @@
+From 38b83a05981ae581df34a6cc230f06b0d9390de1 Mon Sep 17 00:00:00 2001
+From: Matteo Lisi <matteo.lisi@engicam.com>
+Date: Fri, 7 Jun 2019 14:32:46 +0200
+Subject: [PATCH 5/8] emmc-running-icoremx8mm
+
+---
+ board/engicam/icore_mx8mm/icore_mx8mm.c | 13 ++++++++++++-
+ board/engicam/icore_mx8mm/spl.c         | 19 +++++++++++--------
+ 2 files changed, 23 insertions(+), 9 deletions(-)
+
 diff --git a/board/engicam/icore_mx8mm/icore_mx8mm.c b/board/engicam/icore_mx8mm/icore_mx8mm.c
 index d014f6c..05de6ee 100644
 --- a/board/engicam/icore_mx8mm/icore_mx8mm.c
@@ -101,3 +111,6 @@ index 7b2559d..e2dd193 100644
  		if (ret)
  			return ret;
  	}
+-- 
+2.17.1
+

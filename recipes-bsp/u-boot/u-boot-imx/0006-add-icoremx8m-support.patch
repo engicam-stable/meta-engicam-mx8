@@ -1,7 +1,7 @@
-From 3336906bfec0668add513c0886dcbfb3cdef62a5 Mon Sep 17 00:00:00 2001
+From 6edfa815ff93144f507620ab69c2e060218e964e Mon Sep 17 00:00:00 2001
 From: Matteo Lisi <matteo.lisi@engicam.com>
-Date: Mon, 6 May 2019 11:06:58 +0200
-Subject: [PATCH] add icoremx8m support
+Date: Fri, 7 Jun 2019 14:33:04 +0200
+Subject: [PATCH 6/8] add-icoremx8m-support
 
 ---
  arch/arm/dts/Makefile                      |    3 +-
@@ -29,7 +29,7 @@ Subject: [PATCH] add icoremx8m support
  create mode 100644 include/configs/icoremx8m.h
 
 diff --git a/arch/arm/dts/Makefile b/arch/arm/dts/Makefile
-index cce56c6..46a411b 100644
+index d84bdab..1b4b1ce 100644
 --- a/arch/arm/dts/Makefile
 +++ b/arch/arm/dts/Makefile
 @@ -469,7 +469,8 @@ dtb-$(CONFIG_ARCH_IMX8M) += fsl-imx8mq-evk.dtb \
@@ -39,12 +39,12 @@ index cce56c6..46a411b 100644
 -		icore-imx8mm.dtb
 +		icore-imx8mm.dtb \
 +		icoremx8m.dtb
-
- dtb-$(CONFIG_ARCH_IMX8) += fsl-imx8dx-ddr3-arm2.dtb \
+ 
+ dtb-$(CONFIG_ARCH_IMX8) += fsl-imx8dx-17x17-val.dtb \
  		fsl-imx8qm-ddr4-arm2.dtb \
 diff --git a/arch/arm/dts/icoremx8m.dts b/arch/arm/dts/icoremx8m.dts
 new file mode 100644
-index 0000000..950aa9d
+index 0000000..abcea8e
 --- /dev/null
 +++ b/arch/arm/dts/icoremx8m.dts
 @@ -0,0 +1,415 @@
@@ -464,13 +464,13 @@ index 0000000..950aa9d
 +
 +
 diff --git a/arch/arm/mach-imx/imx8m/Kconfig b/arch/arm/mach-imx/imx8m/Kconfig
-index f6e6213..46e8ba1 100644
+index 0596416..ca2c62f 100644
 --- a/arch/arm/mach-imx/imx8m/Kconfig
 +++ b/arch/arm/mach-imx/imx8m/Kconfig
-@@ -38,6 +38,11 @@ config TARGET_IMX8MQ_PHANBELL
- 	select IMX8MQ
+@@ -44,6 +44,11 @@ config TARGET_IMX8MQ_AIY
  	select SUPPORT_SPL
-
+ 	select IMX8M_LPDDR4
+ 
 +config TARGET_ICOREMX8M
 +	bool "icoremx8m"
 +	select IMX8MQ
@@ -479,13 +479,13 @@ index f6e6213..46e8ba1 100644
  config TARGET_IMX8MM_DDR4_VAL
  	bool "imx8mm DDR4 validation board"
  	select IMX8MM
-@@ -78,6 +83,6 @@ source "board/freescale/imx8mm_evk/Kconfig"
+@@ -85,6 +90,6 @@ source "board/freescale/imx8mm_evk/Kconfig"
  source "board/freescale/imx8mm_val/Kconfig"
  source "board/freescale/imx8mm_val/Kconfig"
  source "board/engicam/icore_mx8mm/Kconfig"
 -
 +source "board/engicam/icoremx8m/Kconfig"
-
+ 
  endif
 diff --git a/board/engicam/common/Kconfig b/board/engicam/common/Kconfig
 new file mode 100644
@@ -539,7 +539,7 @@ index 0000000..af24fcb
 +endif
 diff --git a/board/engicam/icoremx8m/icoremx8m.c b/board/engicam/icoremx8m/icoremx8m.c
 new file mode 100644
-index 0000000..553bce0
+index 0000000..6216b83
 --- /dev/null
 +++ b/board/engicam/icoremx8m/icoremx8m.c
 @@ -0,0 +1,392 @@
@@ -937,7 +937,7 @@ index 0000000..553bce0
 +#endif
 diff --git a/board/engicam/icoremx8m/lpddr4_timing.c b/board/engicam/icoremx8m/lpddr4_timing.c
 new file mode 100755
-index 0000000..8fff631
+index 0000000..7de1b4c
 --- /dev/null
 +++ b/board/engicam/icoremx8m/lpddr4_timing.c
 @@ -0,0 +1,1734 @@
@@ -2677,7 +2677,7 @@ index 0000000..8fff631
 +
 diff --git a/board/engicam/icoremx8m/lpddr4_timing_b0.c b/board/engicam/icoremx8m/lpddr4_timing_b0.c
 new file mode 100755
-index 0000000..0e5995a
+index 0000000..e6eb920
 --- /dev/null
 +++ b/board/engicam/icoremx8m/lpddr4_timing_b0.c
 @@ -0,0 +1,1734 @@
@@ -5059,5 +5059,6 @@ index 0000000..82d7234
 +#include "imx8mq_evk_android.h"
 +#endif
 +#endif
---
+-- 
 2.17.1
+

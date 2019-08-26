@@ -1,7 +1,7 @@
-From f9f95fe7769d3da4e5553f2312fe0f57e37d7073 Mon Sep 17 00:00:00 2001
+From 7d9c43f3a1e7dc86fab14ee646b9b25b3ef0806a Mon Sep 17 00:00:00 2001
 From: Matteo Lisi <matteo.lisi@engicam.com>
-Date: Wed, 6 Feb 2019 17:33:15 +0100
-Subject: [PATCH] add icoremx8mm support
+Date: Fri, 7 Jun 2019 14:30:32 +0200
+Subject: [PATCH 1/8] add-icoremx8mm-support
 
 ---
  arch/arm/dts/Makefile                     |    3 +-
@@ -37,7 +37,7 @@ Subject: [PATCH] add icoremx8mm support
  create mode 100644 include/configs/icore_mx8mm.h
 
 diff --git a/arch/arm/dts/Makefile b/arch/arm/dts/Makefile
-index 845de59272..cce56c68a2 100644
+index c841df0..d84bdab 100644
 --- a/arch/arm/dts/Makefile
 +++ b/arch/arm/dts/Makefile
 @@ -468,7 +468,8 @@ dtb-$(CONFIG_ARCH_IMX8M) += fsl-imx8mq-evk.dtb \
@@ -48,11 +48,11 @@ index 845de59272..cce56c68a2 100644
 +		fsl-imx8mm-evk.dtb \
 +		icore-imx8mm.dtb
  
- dtb-$(CONFIG_ARCH_IMX8) += fsl-imx8dx-ddr3-arm2.dtb \
+ dtb-$(CONFIG_ARCH_IMX8) += fsl-imx8dx-17x17-val.dtb \
  		fsl-imx8qm-ddr4-arm2.dtb \
 diff --git a/arch/arm/dts/icore-imx8mm.dts b/arch/arm/dts/icore-imx8mm.dts
 new file mode 100644
-index 0000000000..ba61df07d4
+index 0000000..ba61df0
 --- /dev/null
 +++ b/arch/arm/dts/icore-imx8mm.dts
 @@ -0,0 +1,679 @@
@@ -737,7 +737,7 @@ index 0000000000..ba61df07d4
 +};
 diff --git a/arch/arm/dts/icore-mx8mm.dts b/arch/arm/dts/icore-mx8mm.dts
 new file mode 100644
-index 0000000000..ba61df07d4
+index 0000000..ba61df0
 --- /dev/null
 +++ b/arch/arm/dts/icore-mx8mm.dts
 @@ -0,0 +1,679 @@
@@ -1421,10 +1421,10 @@ index 0000000000..ba61df07d4
 +	extcon = <&typec_ptn5110_2>;
 +};
 diff --git a/arch/arm/mach-imx/imx8/cpu.c b/arch/arm/mach-imx/imx8/cpu.c
-index f554ad8d54..1f0bc4cb69 100644
+index 5e970cb..0217b36 100644
 --- a/arch/arm/mach-imx/imx8/cpu.c
 +++ b/arch/arm/mach-imx/imx8/cpu.c
-@@ -632,7 +632,7 @@ enum boot_device get_boot_device(void)
+@@ -690,7 +690,7 @@ enum boot_device get_boot_device(void)
  
  	switch (dev_rsrc) {
  	case SC_R_SDHC_0:
@@ -1434,10 +1434,10 @@ index f554ad8d54..1f0bc4cb69 100644
  	case SC_R_SDHC_1:
  		boot_dev = SD2_BOOT;
 diff --git a/arch/arm/mach-imx/imx8m/Kconfig b/arch/arm/mach-imx/imx8m/Kconfig
-index 249436c33e..f6e6213c83 100644
+index 09779cd..0596416 100644
 --- a/arch/arm/mach-imx/imx8m/Kconfig
 +++ b/arch/arm/mach-imx/imx8m/Kconfig
-@@ -54,11 +54,17 @@ config TARGET_IMX8MM_EVK
+@@ -60,11 +60,17 @@ config TARGET_IMX8MM_EVK
  	select SUPPORT_SPL
  	select IMX8M_LPDDR4
  
@@ -1458,8 +1458,8 @@ index 249436c33e..f6e6213c83 100644
  
  endchoice
  
-@@ -70,5 +76,8 @@ source "board/freescale/imx8mq_arm2/Kconfig"
- source "board/freescale/imx8mq_phanbell/Kconfig"
+@@ -77,5 +83,8 @@ source "board/freescale/imx8mq_phanbell/Kconfig"
+ source "board/freescale/imx8mq_aiy/Kconfig"
  source "board/freescale/imx8mm_evk/Kconfig"
  source "board/freescale/imx8mm_val/Kconfig"
 +source "board/freescale/imx8mm_val/Kconfig"
@@ -1468,7 +1468,7 @@ index 249436c33e..f6e6213c83 100644
  
  endif
 diff --git a/board/engicam/common/Makefile b/board/engicam/common/Makefile
-index 6630fea012..9b3ef780d9 100644
+index 6630fea..9b3ef78 100644
 --- a/board/engicam/common/Makefile
 +++ b/board/engicam/common/Makefile
 @@ -3,5 +3,10 @@
@@ -1484,7 +1484,7 @@ index 6630fea012..9b3ef780d9 100644
 +endif
 diff --git a/board/engicam/common/mmc.c b/board/engicam/common/mmc.c
 new file mode 100644
-index 0000000000..9fc3e68728
+index 0000000..9fc3e68
 --- /dev/null
 +++ b/board/engicam/common/mmc.c
 @@ -0,0 +1,50 @@
@@ -1540,7 +1540,7 @@ index 0000000000..9fc3e68728
 +}
 diff --git a/board/engicam/common/tcpc.c b/board/engicam/common/tcpc.c
 new file mode 100644
-index 0000000000..0b945218e0
+index 0000000..0b94521
 --- /dev/null
 +++ b/board/engicam/common/tcpc.c
 @@ -0,0 +1,1012 @@
@@ -2558,7 +2558,7 @@ index 0000000000..0b945218e0
 +}
 diff --git a/board/engicam/common/tcpc.h b/board/engicam/common/tcpc.h
 new file mode 100644
-index 0000000000..82fcddaf19
+index 0000000..82fcdda
 --- /dev/null
 +++ b/board/engicam/common/tcpc.h
 @@ -0,0 +1,466 @@
@@ -3030,7 +3030,7 @@ index 0000000000..82fcddaf19
 +#endif /* __TCPCI_H */
 diff --git a/board/engicam/icore_mx8mm/Kconfig b/board/engicam/icore_mx8mm/Kconfig
 new file mode 100644
-index 0000000000..7b2b995700
+index 0000000..7b2b995
 --- /dev/null
 +++ b/board/engicam/icore_mx8mm/Kconfig
 @@ -0,0 +1,14 @@
@@ -3050,7 +3050,7 @@ index 0000000000..7b2b995700
 +endif
 diff --git a/board/engicam/icore_mx8mm/Makefile b/board/engicam/icore_mx8mm/Makefile
 new file mode 100644
-index 0000000000..2c448524d4
+index 0000000..2c44852
 --- /dev/null
 +++ b/board/engicam/icore_mx8mm/Makefile
 @@ -0,0 +1,13 @@
@@ -3069,7 +3069,7 @@ index 0000000000..2c448524d4
 +endif
 diff --git a/board/engicam/icore_mx8mm/ddr4_timing.c b/board/engicam/icore_mx8mm/ddr4_timing.c
 new file mode 100644
-index 0000000000..acbb1b02bb
+index 0000000..acbb1b0
 --- /dev/null
 +++ b/board/engicam/icore_mx8mm/ddr4_timing.c
 @@ -0,0 +1,1500 @@
@@ -4575,7 +4575,7 @@ index 0000000000..acbb1b02bb
 +};
 diff --git a/board/engicam/icore_mx8mm/icore_mx8mm.c b/board/engicam/icore_mx8mm/icore_mx8mm.c
 new file mode 100644
-index 0000000000..a1b7e08c99
+index 0000000..a1b7e08
 --- /dev/null
 +++ b/board/engicam/icore_mx8mm/icore_mx8mm.c
 @@ -0,0 +1,735 @@
@@ -5316,7 +5316,7 @@ index 0000000000..a1b7e08c99
 +#endif /*CONFIG_FSL_FASTBOOT*/
 diff --git a/board/engicam/icore_mx8mm/lpddr4_timing.c b/board/engicam/icore_mx8mm/lpddr4_timing.c
 new file mode 100644
-index 0000000000..61b6b9e2eb
+index 0000000..61b6b9e
 --- /dev/null
 +++ b/board/engicam/icore_mx8mm/lpddr4_timing.c
 @@ -0,0 +1,1981 @@
@@ -7303,7 +7303,7 @@ index 0000000000..61b6b9e2eb
 +};
 diff --git a/board/engicam/icore_mx8mm/spl.c b/board/engicam/icore_mx8mm/spl.c
 new file mode 100644
-index 0000000000..7b2559d9c3
+index 0000000..7b2559d
 --- /dev/null
 +++ b/board/engicam/icore_mx8mm/spl.c
 @@ -0,0 +1,273 @@
@@ -7582,7 +7582,7 @@ index 0000000000..7b2559d9c3
 +}
 diff --git a/configs/icore_mx8mm_defconfig b/configs/icore_mx8mm_defconfig
 new file mode 100644
-index 0000000000..0a01b6a1ed
+index 0000000..0a01b6a
 --- /dev/null
 +++ b/configs/icore_mx8mm_defconfig
 @@ -0,0 +1,73 @@
@@ -7661,7 +7661,7 @@ index 0000000000..0a01b6a1ed
 +CONFIG_IMX_SEC_MIPI_DSI=y
 diff --git a/include/configs/icore_mx8mm.h b/include/configs/icore_mx8mm.h
 new file mode 100644
-index 0000000000..15b944f332
+index 0000000..15b944f
 --- /dev/null
 +++ b/include/configs/icore_mx8mm.h
 @@ -0,0 +1,396 @@

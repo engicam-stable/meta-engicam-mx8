@@ -87,4 +87,4 @@ ${QT5_IMAGE_INSTALL} \
 packagegroup-qt5-qtcreator-debug \
 "
 
-IMAGE_INSTALL_append = " chromium-ozone-wayland rng-tools lprng webgldemo"
+# IMAGE_INSTALL_append = " chromium-ozone-wayland rng-tools lprng webgldemo"

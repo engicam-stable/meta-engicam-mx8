@@ -1,14 +1,14 @@
-From 4cba83e9eabe822e805b81769ff76612dbd47e04 Mon Sep 17 00:00:00 2001
+From e3abbe73a525129cfe263dca6faa33cd558f2796 Mon Sep 17 00:00:00 2001
 From: Matteo Lisi <matteo.lisi@engicam.com>
-Date: Tue, 16 Apr 2019 14:46:35 +0200
-Subject: [PATCH] fix lpddr4_timing
+Date: Fri, 7 Jun 2019 14:32:27 +0200
+Subject: [PATCH 4/8] fix-lpddr4_timing
 
 ---
  board/engicam/icore_mx8mm/lpddr4_timing.c | 82 +++++++++++------------
  1 file changed, 41 insertions(+), 41 deletions(-)
 
 diff --git a/board/engicam/icore_mx8mm/lpddr4_timing.c b/board/engicam/icore_mx8mm/lpddr4_timing.c
-index c3d090081e..135c021470 100755
+index c3d0900..135c021 100755
 --- a/board/engicam/icore_mx8mm/lpddr4_timing.c
 +++ b/board/engicam/icore_mx8mm/lpddr4_timing.c
 @@ -14,7 +14,7 @@ struct dram_cfg_param ddr_ddrc_cfg[] = {

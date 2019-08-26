@@ -1,0 +1,37 @@
+From b92d9f08edb7a04dda8cc030b907372fa9a0968c Mon Sep 17 00:00:00 2001
+From: Matteo Lisi <matteo.lisi@engicam.com>
+Date: Mon, 26 Aug 2019 12:19:59 +0000
+Subject: [PATCH] fix wp on icoremx8x
+
+---
+ arch/arm/dts/icore-imx8xd.dts | 1 -
+ arch/arm/dts/icore-imx8xq.dts | 1 -
+ 2 files changed, 2 deletions(-)
+
+diff --git a/arch/arm/dts/icore-imx8xd.dts b/arch/arm/dts/icore-imx8xd.dts
+index 4fe03bbc0c..5e5cfd8814 100644
+--- a/arch/arm/dts/icore-imx8xd.dts
++++ b/arch/arm/dts/icore-imx8xd.dts
+@@ -410,7 +410,6 @@
+ 	pinctrl-2 = <&pinctrl_usdhc2_200mhz>, <&pinctrl_usdhc2_gpio>;
+ 	bus-width = <4>;
+ 	cd-gpios = <&gpio4 22 GPIO_ACTIVE_LOW>;
+-	wp-gpios = <&gpio4 21 GPIO_ACTIVE_HIGH>;
+ 	vmmc-supply = <&reg_usdhc2_vmmc>;
+ 	status = "okay";
+ };
+diff --git a/arch/arm/dts/icore-imx8xq.dts b/arch/arm/dts/icore-imx8xq.dts
+index 4fe03bbc0c..5e5cfd8814 100644
+--- a/arch/arm/dts/icore-imx8xq.dts
++++ b/arch/arm/dts/icore-imx8xq.dts
+@@ -410,7 +410,6 @@
+ 	pinctrl-2 = <&pinctrl_usdhc2_200mhz>, <&pinctrl_usdhc2_gpio>;
+ 	bus-width = <4>;
+ 	cd-gpios = <&gpio4 22 GPIO_ACTIVE_LOW>;
+-	wp-gpios = <&gpio4 21 GPIO_ACTIVE_HIGH>;
+ 	vmmc-supply = <&reg_usdhc2_vmmc>;
+ 	status = "okay";
+ };
+-- 
+2.17.1
+
