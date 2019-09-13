@@ -29,6 +29,8 @@ IMAGE_INSTALL_append = " \
   fbset \
   fsl-alsa-plugins \
   \
+  gstreamer1.0-rtsp-server \
+  \
   i2c-tools \
   imx-kobs \
   imx-test \
@@ -57,3 +59,4 @@ IMAGE_INSTALL_append = " \
   wireless-tools \
   \
 "
+
