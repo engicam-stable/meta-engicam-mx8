@@ -16,7 +16,7 @@ DEPENDS += "lzop-native bc-native"
 DEFAULT_PREFERENCE = "1"
 
 SRC_URI = "git://github.com/engicam-stable/linux-engicam_4.14.98.git;protocol=git;branch=linux-engicam_4.14.98"
-SRCREV = "0bc870f1ed39820cb5422f33a2b7ed895fcbcb79"
+SRCREV = "c20fb19baddf2b785baee501a518a3949dd984fe"
 
 S = "${WORKDIR}/git"
 
@@ -24,7 +24,6 @@ addtask copy_defconfig after do_unpack before do_preconfigure
 do_copy_defconfig () {
         install -d ${B}
         mkdir -p ${B}
-        echo LUPO
         cp  ${KBUILD_DEFCONFIG} ${WORKDIR}/.config
         cp  ${KBUILD_DEFCONFIG} ${WORKDIR}/defconfig
 }

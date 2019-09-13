@@ -8,6 +8,8 @@ EXTRA_IMAGE_FEATURES = " debug-tweaks ssh-server-openssh tools-debug "
 
 
 IMAGE_INSTALL_append = " \
+  firmware-imx \
+	firmware-imx-sdma \
 	binutils \
 	psplash \
 	iproute2 \
@@ -28,7 +30,7 @@ IMAGE_INSTALL_append = " \
 	usbutils \
 	cpufrequtils \
 	wireless-tools \
-    tslib \
+  tslib \
 	tslib-conf \
 	tslib-tests \
 	tslib-calibrate \
@@ -39,5 +41,7 @@ IMAGE_INSTALL_append = " \
 	fbset \
 	packagegroup-fsl-gstreamer1.0-full \
 	imx-test \
+	lwb-bcm4343w-fw \
+	bluez5 \
+	brcm-patchram-plus \
 "
-
