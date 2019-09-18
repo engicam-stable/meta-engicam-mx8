@@ -15,6 +15,7 @@ IMAGE_INSTALL_append = " \
   \
   binutils \
   \
+  cantest \
   canutils \
   coreutils \
   cpufrequtils \
