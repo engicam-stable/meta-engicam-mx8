@@ -21,7 +21,6 @@ SRCREV = "a0ffbd15a2d2c244b0fa900d3ee7ca95af21cd5c"
 SRC_URI_append_mx8mm += "file://0001-fix-reboot.patch"
 SRC_URI_append_mx8mm += "file://0002-fix-sdhc1-pads.patch"
 
-
 S = "${WORKDIR}/git"
 
 addtask copy_defconfig after do_unpack before do_preconfigure
