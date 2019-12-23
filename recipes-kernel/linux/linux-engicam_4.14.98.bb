@@ -16,9 +16,10 @@ DEPENDS += "lzop-native bc-native"
 DEFAULT_PREFERENCE = "1"
 
 SRC_URI = "git://github.com/engicam-stable/linux-engicam_4.14.98.git;protocol=git;branch=linux-engicam_4.14.98"
-SRCREV = "80655a2d353273b8a61a23476ffb9aca748aec14"
+SRCREV = "a0ffbd15a2d2c244b0fa900d3ee7ca95af21cd5c"
 
 SRC_URI_append_mx8mm += "file://0001-fix-reboot.patch"
+SRC_URI_append_mx8mm += "file://0002-fix-sdhc1-pads.patch"
 
 
 S = "${WORKDIR}/git"
@@ -31,4 +32,4 @@ do_copy_defconfig () {
         cp  ${KBUILD_DEFCONFIG} ${WORKDIR}/defconfig
 }
 
-COMPATIBLE_MACHINE = "(mx8)"
+COMPATIBLE_MACHINE = "(mx8|mx6)"

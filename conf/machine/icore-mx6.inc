@@ -245,7 +245,7 @@ PREFERRED_PROVIDER_virtual/libg2d_imxdpu ?= "imx-dpu-g2d"
 
 PREFERRED_PROVIDER_kernel = "linux-engicam"
 PREFERRED_PROVIDER_virtual/kernel = "linux-engicam"
-PREFERRED_PROVIDER_virtual/bootloader_imx = "u-boot-engicam"
+PREFERRED_PROVIDER_virtual/bootloader_imx = "u-boot-imx"
 
 SOC_DEFAULT_IMAGE_FSTYPES = "sdcard.gz"
 SOC_DEFAULT_IMAGE_FSTYPES_mxs = "uboot-mxsboot-sdcard sdcard.gz"

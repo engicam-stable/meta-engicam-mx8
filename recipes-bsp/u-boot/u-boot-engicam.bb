@@ -10,7 +10,7 @@ LIC_FILES_CHKSUM = "file://Licenses/gpl-2.0.txt;md5=b234ee4d69f5fce4486a80fdaf4a
 UBOOT_SRC ?= "git://github.com/engicam-stable/u-boot-engicam_4.14.98.git;protocol=git"
 SRCBRANCH = "u-boot-engicam_2018.03_4.14.98"
 SRC_URI = "${UBOOT_SRC};branch=${SRCBRANCH}"
-SRCREV = "7e9bf568c116bad720a242f42e0cfb08b44739a9"
+SRCREV = "b05ea8c5aff5d27023475d5f6fa2a764a5aeac2e"
 
 S = "${WORKDIR}/git"
 
@@ -43,7 +43,10 @@ do_deploy_append_mx8m () {
 
 }
 
+
+SRC_URI_append_mx6  += "file://0001-removed-CONFIG_LDO_BYPASS_CHECK.patch"
+
 PACKAGE_ARCH = "${MACHINE_ARCH}"
-COMPATIBLE_MACHINE = "(mx8)"
+COMPATIBLE_MACHINE = "(mx8|mx6)"
 
 UBOOT_NAME_mx8 = "u-boot-${MACHINE}.bin-${UBOOT_CONFIG}"

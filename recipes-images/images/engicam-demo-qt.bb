@@ -28,7 +28,7 @@ IMAGE_FEATURES += " \
     tools-testapps \
     hwcodecs \
     ${@bb.utils.contains('DISTRO_FEATURES', 'wayland', '', \
-       bb.utils.contains('DISTRO_FEATURES',     'x11', 'x11-base x11-sato', \
+       bb.utils.contains('DISTRO_FEATURES', 'x11', 'x11-base x11-sato', \
                                                        '', d), d)} \
 "
 ERPC_COMPS ?= ""
@@ -80,11 +80,12 @@ QT5_IMAGE_INSTALL_imxgpu3d = " \
     gstreamer1.0-plugins-good-qt"
 
 # Add packagegroup-qt5-webengine to QT5_IMAGE_INSTALL_mx6 and comment out the line below to install qtwebengine to the rootfs.
-QT5_IMAGE_INSTALL_remove = " packagegroup-qt5-webengine"
+#QT5_IMAGE_INSTALL_remove = " packagegroup-qt5-webengine"
 
 IMAGE_INSTALL += " \
 ${QT5_IMAGE_INSTALL} \
 packagegroup-qt5-qtcreator-debug \
+packagegroup-fsl-gstreamer1.0-full \
 "
-
-# IMAGE_INSTALL_append = " chromium-ozone-wayland rng-tools lprng webgldemo"
+#IMAGE_INSTALL_append = " packagegroup-qt5-webengine "
+IMAGE_INSTALL_append = " chromium-ozone-wayland rng-tools lprng webgldemo"
