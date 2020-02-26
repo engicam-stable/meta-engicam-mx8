@@ -15,7 +15,6 @@ IMAGE_INSTALL_append = " \
   \
   binutils \
   \
-  cantest \
   canutils \
   coreutils \
   cpufrequtils \
@@ -29,6 +28,8 @@ IMAGE_INSTALL_append = " \
   \
   fbset \
   fsl-alsa-plugins \
+  \
+  gstreamer1.0-rtsp-server \
   \
   i2c-tools \
   imx-kobs \
@@ -55,4 +56,7 @@ IMAGE_INSTALL_append = " \
   \
   v4l-utils \
   \
+  wireless-tools \
+  \
 "
+
