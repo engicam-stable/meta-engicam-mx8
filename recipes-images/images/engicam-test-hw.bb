@@ -14,6 +14,7 @@ IMAGE_INSTALL_append = " \
   alsa-utils \
   \
   binutils \
+  bzip2 \
   \
   cantest \
   canutils \
@@ -24,6 +25,8 @@ IMAGE_INSTALL_append = " \
   dosfstools \
   \
   e2fsprogs \
+  e2fsprogs-resize2fs \
+  engicam-emmc-tools \
   ethtool \
   evtest \
   \
@@ -40,10 +43,12 @@ IMAGE_INSTALL_append = " \
   minicom \
   \
   packagegroup-fsl-gstreamer1.0-full \
+  parted \
   psplash \
   \
   serialtools \
   \
+  tar \
   test-sound \
   tslib \
   tslib-calibrate \
