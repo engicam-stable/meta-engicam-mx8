@@ -1,14 +1,14 @@
-From 6866e1aee242d0b49570872cfd146d1432f078ab Mon Sep 17 00:00:00 2001
+From c0df24e3b7108577eda9fd1b514dd0658d4eb317 Mon Sep 17 00:00:00 2001
 From: Domenico Acri <domenico.acri@engicam.com>
-Date: Wed, 26 Feb 2020 10:11:42 +0000
+Date: Fri, 27 Mar 2020 16:13:10 +0000
 Subject: [PATCH] fix dtb for icoremx8mm
 
 ---
- iMX8M/soc.mak | 4 ++--
- 1 file changed, 2 insertions(+), 2 deletions(-)
+ iMX8M/soc.mak | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
 diff --git a/iMX8M/soc.mak b/iMX8M/soc.mak
-index d714259..10d5d80 100644
+index d714259..22670da 100644
 --- a/iMX8M/soc.mak
 +++ b/iMX8M/soc.mak
 @@ -111,7 +111,7 @@ u-boot-atf-tee.bin: u-boot.bin bl31.bin tee.bin
@@ -20,15 +20,6 @@ index d714259..10d5d80 100644
  u-boot.itb: $(dtbs)
  	./$(PAD_IMAGE) bl31.bin
  	./$(PAD_IMAGE) u-boot-nodtb.bin $(dtbs)
-@@ -235,7 +235,7 @@ nightly :
- 	@$(WGET) -q $(SERVER)/$(DIR)/$(FW_DIR)/bl31-$(PLAT).bin -O bl31.bin
- 	@$(WGET) -q $(SERVER)/$(DIR)/$(FW_DIR)/u-boot-spl.bin-$(PLAT)evk-sd -O u-boot-spl.bin
- 	@$(WGET) -q $(SERVER)/$(DIR)/$(FW_DIR)/u-boot-nodtb.bin-$(PLAT)evk-sd -O u-boot-nodtb.bin
--	@$(WGET) -q $(SERVER)/$(DIR)/$(FW_DIR)/fsl-$(PLAT)-evk.dtb -O fsl-$(PLAT)-evk.dtb
-+	@$(WGET) -q $(SERVER)/$(DIR)/$(FW_DIR)/icore-imx8mm.dtb -O icore-imx8mm.dtb
- 	@$(WGET) -q $(SERVER)/$(DIR)/$(FW_DIR)/signed_hdmi_imx8m.bin -O signed_hdmi_imx8m.bin
- 	@$(WGET) -q $(SERVER)/$(DIR)/$(FW_DIR)/signed_dp_imx8m.bin -O signed_dp_imx8m.bin
- 	@$(WGET) -q $(SERVER)/$(DIR)/$(FW_DIR)/mkimage_uboot -O mkimage_uboot
 -- 
 2.17.1
 

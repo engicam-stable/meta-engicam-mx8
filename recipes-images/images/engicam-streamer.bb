@@ -55,8 +55,5 @@ IMAGE_INSTALL_append = " \
   util-linux \
   \
   v4l-utils \
-  \
-  wireless-tools \
-  \
 "
 
