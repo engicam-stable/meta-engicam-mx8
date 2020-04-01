@@ -55,4 +55,8 @@ IMAGE_INSTALL_append = " \
   \
   v4l-utils \
   \
+  lwb-backports-laird \
+  lwb-radio-firmware-etsi \
+  brcm-patchram-plus \
+  \
 "
