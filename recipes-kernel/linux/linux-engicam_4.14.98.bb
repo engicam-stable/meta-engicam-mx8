@@ -16,7 +16,7 @@ DEPENDS += "lzop-native bc-native"
 DEFAULT_PREFERENCE = "1"
 
 SRC_URI = "git://github.com/engicam-stable/linux-engicam_4.14.98.git;protocol=git;branch=linux-engicam_4.14.98"
-SRCREV = "ffb034d225d45150539d15c9786faed21dbc492c"
+SRCREV = "d08fa951daaa7805204aca83da5fe7b8771eabd6"
 
 SRC_URI_append_mx8mm += "file://0001-fix-reboot.patch"
 SRC_URI_append_mx8mm += "file://0002-fix-sdhc1-pads.patch"
