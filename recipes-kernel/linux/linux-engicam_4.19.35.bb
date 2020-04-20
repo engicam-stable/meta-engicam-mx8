@@ -16,7 +16,7 @@ SRCBRANCH = "linux-engicam_4.19.35"
 LOCALVERSION = "-1.1.0"
 KERNEL_SRC ?= "git://github.com/engicam-stable/linux-engicam_4.19.35.git;protocol=https"
 SRC_URI = "${KERNEL_SRC};branch=${SRCBRANCH}"
-SRCREV = "c9689cbf62dd1eb07dffae0b19f1681a87f5c133"
+SRCREV = "8d11b2329a54779dddfb05360fd742fe02a547e8"
 
 S = "${WORKDIR}/git"
 
@@ -29,7 +29,6 @@ DEFCONFIG_mx8mm = "icoremx8mm_defconfig"
 DEFCONFIG_mx8qxp = "smarcoremx8x_defconfig"
 
 do_preconfigure_prepend() {
-    echo "*****************"${DEFCONFIG}
     # meta-freescale/classes/fsl-kernel-localversion.bbclass requires
     # defconfig in ${WORKDIR}
     install -d ${B}
