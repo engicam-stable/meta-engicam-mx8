@@ -1,7 +1,7 @@
 #!/bin/bash
 # EMMC programmer
 
-ver="ver. 1.9, 2020-03-19"
+ver="ver. 1.10, 2020-04-27"
 filebytftp=false
 
 function error
@@ -25,7 +25,7 @@ function create_emmc
 echo "create_emmc"
 
 dd if=/dev/zero of=$1 bs=1M count=1
-wipefs --all --force -q /dev/mmcblk2
+wipefs --all --force -q $1
 echo "Partitioning emmc"
 echo "o
 n
