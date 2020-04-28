@@ -19,7 +19,6 @@ SRC_URI = "git://github.com/engicam-stable/linux-engicam_4.14.98.git;protocol=gi
 SRCREV = "d08fa951daaa7805204aca83da5fe7b8771eabd6"
 
 SRC_URI_append_mx8mm += "file://0001-fix-reboot.patch"
-SRC_URI_append_mx8mm += "file://0002-fix-sdhc1-pads.patch"
 
 S = "${WORKDIR}/git"
 
