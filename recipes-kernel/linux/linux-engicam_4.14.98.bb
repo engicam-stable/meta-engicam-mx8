@@ -16,7 +16,7 @@ DEPENDS += "lzop-native bc-native"
 DEFAULT_PREFERENCE = "1"
 
 SRC_URI = "git://github.com/engicam-stable/linux-engicam_4.14.98.git;protocol=git;branch=linux-engicam_4.14.98"
-SRCREV = "32f21d3c0ca7b49b9c604e6ed1f05201ee60a90a"
+SRCREV = "a3017915d770ddbe5be1f0c6558b8c157c0bee1e"
 
 SRC_URI_append_mx8mm += "file://0001-fix-reboot.patch"
 
