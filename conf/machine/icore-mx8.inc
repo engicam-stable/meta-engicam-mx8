@@ -12,6 +12,7 @@ PREFERRED_PROVIDER_u-boot ??= "u-boot-fslc"
 PREFERRED_PROVIDER_virtual/bootloader ??= "u-boot-fslc"
 PREFERRED_PROVIDER_virtual/bootloader_mx8m = "u-boot-engicam"
 PREFERRED_PROVIDER_virtual/bootloader_mx8x = "u-boot-engicam"
+PREFERRED_PROVIDER_virtual/bootloader_mx8qm = "u-boot-engicam"
 
 PREFERRED_PROVIDER_u-boot-mxsboot-native ??= "u-boot-fslc-mxsboot-native"
 
