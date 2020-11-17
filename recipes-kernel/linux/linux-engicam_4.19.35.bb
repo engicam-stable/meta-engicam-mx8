@@ -27,6 +27,7 @@ DEFCONFIG_mx6 = "imx_v7_defconfig"
 DEFCONFIG_mx7 = "imx_v7_defconfig"
 DEFCONFIG_mx8mm = "icoremx8mm_defconfig"
 DEFCONFIG_mx8qxp = "smarcoremx8x_defconfig"
+DEFCONFIG_mx8qm = "ultrageamx8qm_defconfig"
 
 do_preconfigure_prepend() {
     # meta-freescale/classes/fsl-kernel-localversion.bbclass requires
