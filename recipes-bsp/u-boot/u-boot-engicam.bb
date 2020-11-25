@@ -10,7 +10,7 @@ LIC_FILES_CHKSUM = "file://Licenses/gpl-2.0.txt;md5=b234ee4d69f5fce4486a80fdaf4a
 UBOOT_SRC ?= "git://github.com/engicam-stable/u-boot-engicam_4.14.98.git;protocol=git"
 SRCBRANCH = "u-boot-engicam_2018.03_4.14.98"
 SRC_URI = "${UBOOT_SRC};branch=${SRCBRANCH}"
-SRCREV = "64279edd3eb5294d31847d757038547f24bcc0ef"
+SRCREV = "bce195b778c73142bc1b558e0bc34e03804cf89e"
 
 S = "${WORKDIR}/git"
 
